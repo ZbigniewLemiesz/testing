@@ -19,4 +19,11 @@ public class Range {
         return number >= lowerBound && number <= upperBound;
     }
 
+    public long getLowerBound() {
+        return lowerBound;
+    }
+
+    public long getUpperBound() {
+        return upperBound;
+    }
 }

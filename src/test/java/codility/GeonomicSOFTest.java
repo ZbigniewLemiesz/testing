@@ -12,17 +12,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class GeonomicSOFTest {
     GeonomicSOF geonomicSOF;
 
-    @BeforeEach
-    void setGeonomicSOF(){
-        geonomicSOF = new GeonomicSOF();
-    }
-    @ParameterizedTest
-    @MethodSource("argumentsProvider")
-    void shouldReturnsArrayOfMinimalImpact(int[] expected, String s, int[] p, int[] q) {
-        assertArrayEquals(expected, geonomicSOF.solution(s, p, q));
-    }
-
-
     private static Stream<Arguments> argumentsProvider() {
         return Stream.of(
                 Arguments.of(new int[]{2, 4, 1}, "CAGCCTA", new int[]{2, 5, 0}, new int[]{4, 5, 6}),
@@ -38,6 +27,17 @@ class GeonomicSOFTest {
                         "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG", new int[]{0, 200}, new int[]{500, 550}),
                 Arguments.of(new int[]{2}, "C", new int[]{0}, new int[]{0})
         );
+    }
+
+    @BeforeEach
+    void setGeonomicSOF() {
+        geonomicSOF = new GeonomicSOF();
+    }
+
+    @ParameterizedTest
+    @MethodSource("argumentsProvider")
+    void shouldReturnsArrayOfMinimalImpact(int[] expected, String s, int[] p, int[] q) {
+        assertArrayEquals(expected, geonomicSOF.solution(s, p, q));
     }
 
 }

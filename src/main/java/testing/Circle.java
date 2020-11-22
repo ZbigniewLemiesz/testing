@@ -1,8 +1,5 @@
 package testing;
 
-import lombok.Getter;
-
-@Getter
 public class Circle {
     private double radius;
 
@@ -11,6 +8,10 @@ public class Circle {
             throw new IllegalArgumentException("Invalid radius : " + radius);
         }
         this.radius = radius;
+    }
+
+    public double getRadius() {
+        return radius;
     }
 
     public double calculateArea() {
