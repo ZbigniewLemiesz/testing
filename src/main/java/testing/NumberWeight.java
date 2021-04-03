@@ -25,6 +25,4 @@ public class NumberWeight {
         }
         return result;
     }
-
-
 }

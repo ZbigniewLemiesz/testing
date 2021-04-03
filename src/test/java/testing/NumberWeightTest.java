@@ -18,13 +18,10 @@ class NumberWeightTest {
 
     static Stream<Arguments> argumentsProvider() {
         return Stream.of(
-                Arguments.of(125, 8),
-                Arguments.of(999999999, 9),
-                Arguments.of(1234567895, 5),
-                Arguments.of(1, 1),
-                Arguments.of(1000000009, 1),
-                Arguments.of(1000000000, 1),
-                Arguments.of(999999991, 1)
+                Arguments.of(12536, 8),
+                Arguments.of(1999999999, 1),
+                Arguments.of(19, 1),
+                Arguments.of(9, 9)
         );
     }
 
