@@ -1,4 +1,7 @@
 package codility;
+/**
+ * @author Zbigniew Lemiesz
+ */
 
 public class PermCheck {
     public int solution(int[] a) {

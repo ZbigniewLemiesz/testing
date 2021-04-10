@@ -1,5 +1,9 @@
 package codility;
 
+/**
+ * @author Zbigniew Lemiesz
+ */
+
 public class PassingCars {
     public int solution(int[] a) {
         int counterOfOnes = 0;

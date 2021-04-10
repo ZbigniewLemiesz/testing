@@ -15,9 +15,11 @@ class CountLongestCharOccurrencesInStringTest {
     static Stream<Arguments> argumentsProvider() {
         return Stream.of(
                 Arguments.of("xxxx", "x 4"),
+                Arguments.of("xxxxxx", "x 6"),
                 Arguments.of("xyy","y 2"),
                 Arguments.of("x", "x 1"),
                 Arguments.of("xxyyyzzz", "y 3"),
+                Arguments.of("xxyyyzzzz", "z 4"),
                 Arguments.of("xyz", "x 1")
         );
     }

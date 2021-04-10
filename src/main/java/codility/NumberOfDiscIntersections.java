@@ -1,4 +1,8 @@
 package codility;
+/**
+ * @author Zbigniew Lemiesz
+ */
+
 
 public class NumberOfDiscIntersections {
     public int solution(int[] a) {
