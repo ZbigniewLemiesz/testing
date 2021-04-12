@@ -8,7 +8,6 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * @author Zbigniew Lemiesz
@@ -36,20 +35,23 @@ class SortingMethodsTest {
 
     @ParameterizedTest
     @MethodSource("argumentsProvider")
-    void shouldReturnBubblesSortedArray(int[] given, int[] expected) {
-        assertArrayEquals(expected, sortingMethods.bubbles(given));
+    void shouldReturnSortedArrayByBubbles(int[] given, int[] expected) {
+        sortingMethods.bubbles(given);
+        assertArrayEquals(expected, given);
     }
 
     @ParameterizedTest
     @MethodSource("argumentsProvider")
-    void shouldReturnInsertionSortedArray(int[] given, int[] expected) {
-        assertArrayEquals(expected, sortingMethods.insertion(given));
+    void shouldReturnSortedArrayByInsertion(int[] given, int[] expected) {
+        sortingMethods.insertion(given);
+        assertArrayEquals(expected,given);
     }
 
     @ParameterizedTest
     @MethodSource("argumentsProvider")
-    void shouldReturnInsertion2ndSortedArray(int[] given, int[] expected) {
-        assertArrayEquals(expected, sortingMethods.insertion2nd(given));
+    void shouldReturnSortedArrayBySelection(int[] given, int[] expected) {
+        sortingMethods.selection(given);
+        assertArrayEquals(expected, given);
     }
 
 }

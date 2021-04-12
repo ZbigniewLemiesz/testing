@@ -12,7 +12,7 @@ public class SortingMethods {
     }
 
 
-    public int[] bubbles(int[] t) {
+    public void bubbles(int[] t) {
         for (int i = 0; i < t.length - 1; i++) {
             for (int j = 0; j < t.length - i - 1; j++) {
                 if (t[j] > t[j + 1]) {
@@ -20,30 +20,43 @@ public class SortingMethods {
                 }
             }
         }
-        return t;
     }
 
-    public int[] insertion(int[] t) {
-        for (int i = 1; i < t.length; i++) {
-            for (int j = 0; j < i; j++) {
-                if (t[j] > t[i]) {
-                    int tmp = t[i];
-                    for (int k = i - 1; k >= j; k--) {
-                        t[k + 1] = t[k];
-                    }
-                    t[j] = tmp;
-                    break;
+    public void selection(int[] t) {
+        int min, i, j, temp;
+        for (i = 0; i < t.length; i++) {
+            min = i;
+            for (j = i + 1; j < t.length; j++) {
+                if (t[j] < t[min]) {
+                    min = j;
                 }
             }
+            temp = t[min];
+            t[min] = t[i];
+            t[i] = temp;
         }
-        return t;
+    }
+
+    public void insertion(int[] t) {
+        for (int i = 1; i < t.length; i++) {
+            int tmp = t[i];
+            int j;
+            for (j = i - 1; j >= 0; j--) {
+                if (t[j] > tmp) {
+                    t[j + 1] = t[j];
+                } else
+                    break;
+            }
+            t[j + 1] = tmp;
+        }
+        //return t;
     }
 
     public int[] insertion2nd(int[] t) {
         for (int i = 1; i < t.length; i++) {
             int tmp = t[i];
             int j = i - 1;
-            while (j >= 0 && tmp < t[j] ) {
+            while (j >= 0 && tmp < t[j]) {
                 t[j + 1] = t[j];
                 j--;
             }
@@ -51,5 +64,4 @@ public class SortingMethods {
         }
         return t;
     }
-
 }
