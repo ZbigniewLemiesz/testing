@@ -14,11 +14,14 @@ public class SortingMethods {
 
     public void bubbles(int[] t) {
         for (int i = 0; i < t.length - 1; i++) {
+            boolean isSorted = true;
             for (int j = 0; j < t.length - i - 1; j++) {
                 if (t[j] > t[j + 1]) {
                     swap(t, j);
+                    isSorted = false;
                 }
             }
+            if(isSorted) break;
         }
     }
 
@@ -49,7 +52,6 @@ public class SortingMethods {
             }
             t[j + 1] = tmp;
         }
-        //return t;
     }
 
     public int[] insertion2nd(int[] t) {
