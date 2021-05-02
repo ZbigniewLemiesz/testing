@@ -5,10 +5,10 @@ package testing;
  */
 
 public class SortingMethods {
-    public void swap(int[] t, int j) {
-        int temp = t[j];
-        t[j] = t[j + 1];
-        t[j + 1] = temp;
+    public void swap(int[] t, int i, int k) {
+        int temp = t[i];
+        t[i] = t[k];
+        t[k] = temp;
     }
 
 
@@ -17,11 +17,11 @@ public class SortingMethods {
             boolean isSorted = true;
             for (int j = 0; j < t.length - i - 1; j++) {
                 if (t[j] > t[j + 1]) {
-                    swap(t, j);
+                    swap(t, j, j + 1);
                     isSorted = false;
                 }
             }
-            if(isSorted) break;
+            if (isSorted) break;
         }
     }
 
@@ -54,7 +54,7 @@ public class SortingMethods {
         }
     }
 
-    public int[] insertion2nd(int[] t) {
+    public void insertion2nd(int[] t) {
         for (int i = 1; i < t.length; i++) {
             int tmp = t[i];
             int j = i - 1;
@@ -64,6 +64,31 @@ public class SortingMethods {
             }
             t[j + 1] = tmp;
         }
-        return t;
+    }
+
+    public void quickSort(int[] a) {
+        quickSortRecursion(a, 0, a.length-1);
+    }
+
+    public void quickSortRecursion(int[] array, int first, int last) {
+        if (first >= last) return;
+        int pivotValue = array[last];
+        int border = first - 1;
+        int i = first;
+        while (i < last) {
+            if (array[i] < pivotValue) {
+                border++;
+                if (border != i) {
+                    swap(array, border, i);
+                }
+            }
+            i++;
+        }
+        border++;
+        if (border != i) {
+            swap(array, border, last);
+        }
+        quickSortRecursion(array, first, border -1);
+        quickSortRecursion(array, border+1, last);
     }
 }

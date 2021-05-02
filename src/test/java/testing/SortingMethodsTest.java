@@ -53,5 +53,10 @@ class SortingMethodsTest {
         sortingMethods.selection(given);
         assertArrayEquals(expected, given);
     }
-
+    @ParameterizedTest
+    @MethodSource("argumentsProvider")
+    void shouldReturnSortedArrayByQuickSort(int[] given, int[] expected) {
+        sortingMethods.quickSort(given);
+        assertArrayEquals(expected, given);
+    }
 }
