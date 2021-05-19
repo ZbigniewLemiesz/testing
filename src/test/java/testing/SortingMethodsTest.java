@@ -40,6 +40,7 @@ class SortingMethodsTest {
         assertArrayEquals(expected, given);
     }
 
+
     @ParameterizedTest
     @MethodSource("argumentsProvider")
     void shouldReturnSortedArrayByInsertion(int[] given, int[] expected) {
