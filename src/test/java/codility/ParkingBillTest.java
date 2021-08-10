@@ -16,7 +16,7 @@ class ParkingBillTest {
     ParkingBill parkingBill;
 
     @BeforeEach
-    void setParityDegree(){
+    void setParkingBill(){
         parkingBill = new ParkingBill();
     }
 

@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author Zbigniew Lemiesz
  */
 class ThreeLettersTest {
-    
+
     ThreeLetters threeLetters = new ThreeLetters();
 
     private static Stream<Arguments> argumentsProvider() {
